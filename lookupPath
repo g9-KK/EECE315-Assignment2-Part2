@@ -1,0 +1,28 @@
+char *lookupPath (char **argv, char **dir) {
+
+char *name;
+int i,j;
+name = (char *)malloc(sizeof(char) *MAX_PATH_LEN);
+for (i=0;i< MAX_PATH_LEN; i++) {
+	name[MAX_PATH_LEN] = '\0'; //set Null
+}
+if(*argv[0] == '/') {
+	if ((access(*argv,F_OK) !=-1) {
+	return *argv;
+	}
+}
+else {
+for (j=0;j<MAX_PATHS,i++) (
+	if(dir[i] != '\0') {
+		strcpy(name,dir[i]);
+		strcat(name,"l");
+		strcat(name, argv[0]);
+	if ((access(name,F_OK) !=-1) {
+	return name;
+	}
+	}
+}
+}
+fprint(stderr,"Command '%s' Not Found! \n",argv[0]);
+return NULL;
+}
